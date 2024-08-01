@@ -7,7 +7,7 @@ public class Installment {
 	private LocalDate dueDate;
 	private Double amount;
 
-	DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	public Installment(LocalDate dueDate, Double amount) {
 		this.dueDate = dueDate;
@@ -30,8 +30,11 @@ public class Installment {
 		this.amount = amount;
 	}
 
+	@Override
 	public String toString() {
 		return dueDate.format(fmt) + " - " + String.format("%.2f", amount);
 	}
 
+	
+	
 }
